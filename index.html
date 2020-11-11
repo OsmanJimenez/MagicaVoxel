@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+</head>
+<body>
+    <a-scene>
+        <a-assets>
+          <a-asset-item id="my-obj" src="coralgi.obj"></a-asset-item>
+          <a-asset-item id="my-mtl" src="coralgi.mtl"></a-asset-item>
+        </a-assets>
+      
+        <!-- Model. -->
+        <a-obj-model src="#my-obj" mtl="#my-mtl" position="0 -1 -5"></a-obj-model>
+      </a-scene>
+</body>
+</html>
+
+
