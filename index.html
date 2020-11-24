@@ -16,19 +16,32 @@
           })
         }
       })
+
     
+    </script>
+    <script>
+      AFRAME.registerComponent('static-movement', {
+        schema: {default: ''},
+        init: function () {
+           var el = this.el;
+           el.addEventListener('click', function () {
+              document.querySelector('#player').setAttribute('position', el.getAttribute('position'));
+              console.log("Click: Player moved");
+           });
+        }
+    });
     </script>
 </head>
 <body>
     <a-scene background="color: #00a8ff" >
-        <a-assets scale="0.5 1 2">
+        <a-assets  scale="0.5 1 2">
           <a-asset-item id="my-obj" src="coralgi.obj"></a-asset-item>
           <a-asset-item id="my-mtl" src="coralgi.mtl"></a-asset-item>
         </a-assets>
         
       
         <!-- Model. -->
-        <a-obj-model src="#my-obj" mtl="#my-mtl" position="0 -1 -5" foo></a-obj-model>
+        <a-obj-model src="#my-obj" mtl="#my-mtl" position="0 -1 -5" foo static-movement></a-obj-model>
       </a-scene>
 </body>
 
